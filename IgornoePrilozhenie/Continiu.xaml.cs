@@ -16,22 +16,13 @@ using System.Windows.Shapes;
 namespace IgornoePrilozhenie
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Continiu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Continiu : UserControl
     {
-        public MainViewModel ViewModel { get; set; }
-        public MainWindow()
+        public Continiu()
         {
             InitializeComponent();
-            ViewModel = new MainViewModel();
-            DataContext = ViewModel;
-
-
-            // Установите начальный UserControl, если необходимо
-            ViewModel.SelectedControl = new UserControl1();
         }
-        
-
     }
 }

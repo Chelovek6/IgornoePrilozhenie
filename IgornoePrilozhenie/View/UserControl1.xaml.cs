@@ -16,22 +16,17 @@ using System.Windows.Shapes;
 namespace IgornoePrilozhenie
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для UserControl1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UserControl1 : UserControl
     {
-        public MainViewModel ViewModel { get; set; }
-        public MainWindow()
+        public UserControl1()
         {
             InitializeComponent();
-            ViewModel = new MainViewModel();
-            DataContext = ViewModel;
-
-
-            // Установите начальный UserControl, если необходимо
-            ViewModel.SelectedControl = new UserControl1();
         }
-        
-
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace IgornoePrilozhenie
 {
     /// <summary>
-    /// Логика взаимодействия для RussianRulet.xaml
+    /// Логика взаимодействия для Defeat.xaml
     /// </summary>
-    public partial class RussianRulet : Page
+    public partial class Defeat : UserControl
     {
-        public RussianRulet()
+        public Defeat()
         {
             InitializeComponent();
         }

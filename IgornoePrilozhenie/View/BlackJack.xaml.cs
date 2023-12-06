@@ -13,16 +13,62 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace IgornoePrilozhenie
 {
     /// <summary>
     /// Логика взаимодействия для BlackJack.xaml
     /// </summary>
-    public partial class BlackJack : Page
+    public partial class BlackJack : UserControl
     {
+        private BlackJackLogic blackJackLogic;
         public BlackJack()
         {
             InitializeComponent();
+            blackJackLogic = new BlackJackLogic();
+           
+
         }
+        private void BtnDrawCard_Click(object sender, RoutedEventArgs e)
+        {
+            blackJackLogic.PlayerDrawCard();
+            UpdateUI();
+        }
+        
+
+        private void BtnStand_Click(object sender, RoutedEventArgs e)
+        {
+            blackJackLogic.OpponentTurn();
+            blackJackLogic.DeclareWinner();
+            UpdateUI();
+        }
+        private void OnOpponentWins(object sender, EventArgs e)
+        {
+            // Логика для случая победы противника
+            Defeat userControl4 = new Defeat();
+            // ... (отобразите userControl4 в вашем UI)
+        }
+        
+        private void UpdateUI()
+        {
+            txtPlayerScore.Text = $"Ваши очки: {blackJackLogic.PlayerScore}";
+            // lblOpponentScore.Content = $"Очки противника: {(blackJackLogic.DeveloperMode ? blackJackLogic.OpponentScore.ToString() : "скрыто")}";
+            txtOpponentsDefeated.Text = $"{BlackJackLogic.OpponentsDefeated}";
+            txtGamerPlus.Text = $"{BlackJackLogic.GamerPoint}";
+        }
+        private void StartNewGame()
+        {
+            blackJackLogic.Start();
+            // Здесь можете обновить интерфейс согласно начальному состоянию игры
+        }
+        
+        
+       
     }
+
+    public class Card
+    {
+        public int Value { get; set; }
+    }
+
 }

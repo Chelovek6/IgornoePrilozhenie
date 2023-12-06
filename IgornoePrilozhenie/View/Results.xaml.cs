@@ -18,7 +18,7 @@ namespace IgornoePrilozhenie
     /// <summary>
     /// Логика взаимодействия для Results.xaml
     /// </summary>
-    public partial class Results : Page
+    public partial class Results : UserControl
     {
         public Results()
         {

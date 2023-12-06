@@ -16,22 +16,13 @@ using System.Windows.Shapes;
 namespace IgornoePrilozhenie
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для RussianRullet.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RussianRullet : UserControl
     {
-        public MainViewModel ViewModel { get; set; }
-        public MainWindow()
+        public RussianRullet()
         {
             InitializeComponent();
-            ViewModel = new MainViewModel();
-            DataContext = ViewModel;
-
-
-            // Установите начальный UserControl, если необходимо
-            ViewModel.SelectedControl = new UserControl1();
         }
-        
-
     }
 }

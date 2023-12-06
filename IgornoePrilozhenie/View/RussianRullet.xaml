@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="IgornoePrilozhenie.BlackJack"
+﻿<UserControl x:Class="IgornoePrilozhenie.RussianRullet"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,14 +9,11 @@
     <Grid>
         <!-- Table (Brown Rectangle) -->
         <Rectangle Fill="#733a05" Margin="10,200,10,60"/>
-        <ContentControl Content="{Binding CurrentControl}" />
-        <ContentControl Content="{Binding CurrentControl}" />
+
         <!-- Exit Button (Top Left) -->
         <Button Content="Выход" Foreground="White" Background="#4f4b47" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Command="{Binding ShowUserControl3Command}"/>
-        
-        <Button Content="Продолжить"  FontSize="18"   Padding="10"  Width="150" Command="{Binding ShowUserControl6Command}" Height="60" Margin="534,111,116,279"/>
         <Image Source="/IgornoePrilozhenie;component/Imeges/Man.png" Margin="217,-35,225,215"/>
-        <!-- Score Section (Top Right)-->
+        <!-- Score Section (Top Right) -->
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
 
             <!-- Score Section (Opponents and Main) -->
@@ -28,12 +25,12 @@
                     <Image Source="/IgornoePrilozhenie;component/Imeges/skull.png" Width="30" Height="30" Margin="0,0,5,0"/>
 
                     <!-- Opponents Score -->
-                    <TextBlock Name="txtOpponentsDefeated" Text="0" FontSize="24" Foreground="Black" />
+                    <TextBlock Text="12" FontSize="24" Foreground="Black" />
                 </StackPanel>
 
                 <!-- Main Score (Animated) -->
                 <StackPanel Orientation="Horizontal" Margin="10">
-                    <TextBlock Name="txtGamerPlus" Text="0" FontSize="24" Foreground="Black">
+                    <TextBlock Text="250" FontSize="24" Foreground="Black">
 
                     </TextBlock>
                 </StackPanel>
@@ -41,12 +38,12 @@
         </StackPanel>
 
         <!-- Total Card Sum (Bottom Right) -->
-        <TextBlock Name="txtPlayerScore" Text="0" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10"/>
+        <TextBlock Text="1/6" FontSize="25" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10"/>
 
         <!-- Action Buttons Section (Bottom Left) -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
-            <Button Content="Взять" Background="Green" Foreground="White" Width="160" Height="40" Margin="5" Click="BtnDrawCard_Click"/>
-            <Button Content="Пасс" Background="Red" Foreground="White" Width="160" Height="40" Margin="5" Click="BtnStand_Click"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
+            <Button Content="Выстрел" Background="Green" Foreground="White" Width="160" Height="40" Margin="5"/>
+            
         </StackPanel>
     </Grid>
 </UserControl>

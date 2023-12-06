@@ -16,22 +16,13 @@ using System.Windows.Shapes;
 namespace IgornoePrilozhenie
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ChoseGameMode.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ChoseGameMode : UserControl
     {
-        public MainViewModel ViewModel { get; set; }
-        public MainWindow()
+        public ChoseGameMode()
         {
             InitializeComponent();
-            ViewModel = new MainViewModel();
-            DataContext = ViewModel;
-
-
-            // Установите начальный UserControl, если необходимо
-            ViewModel.SelectedControl = new UserControl1();
         }
-        
-
     }
 }
