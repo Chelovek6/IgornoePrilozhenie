@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using IgornoePrilozhenie.DataContext;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +40,7 @@ namespace IgornoePrilozhenie
 
         public void Start()
         {
-            Console.WriteLine("Начинаем новую игру!");
+            MessageBox.Show("Начинаем новую игру!");
 
             // Раздача начальных карт
             playerScore += DrawCard();
@@ -53,7 +54,7 @@ namespace IgornoePrilozhenie
 
         public void OpponentTurn()
         {
-            Console.WriteLine("Ход противника...");
+            MessageBox.Show("Ход противника...");
 
             // Логика хода противника
             while ((opponentScore < 10 || opponentScore == 11) || (opponentScore < 17 && opponentScore != 11))
@@ -61,16 +62,16 @@ namespace IgornoePrilozhenie
                 int cardValue = DrawCard();
                 if (cardValue == 0)
                 {
-                    Console.WriteLine("Карты закончились!");
+                    MessageBox.Show("Карты закончились!");
                     break;
                 }
                 opponentScore += cardValue;
             }
 
-            Console.WriteLine($"Противник закончил ход со счетом {opponentScore}");
+            MessageBox.Show($"Противник закончил ход со счетом {opponentScore}");
             if (opponentScore > 21)
             {
-                Console.WriteLine("Противник перебрал. Вы побеждаете!");
+                MessageBox.Show("Противник перебрал. Вы побеждаете!");
             }
         }
 
@@ -82,47 +83,45 @@ namespace IgornoePrilozhenie
                 // Оба игрока перебрали, побеждает тот, кто ближе к 21
                 if (Math.Abs(21 - playerScore) < Math.Abs(21 - opponentScore))
                 {
-                    Console.WriteLine("Вы побеждаете!");
+                    MessageBox.Show("Вы побеждаете!");
                     RestartGame();
                     OpponentsDefeated++;
                     GamerPoint = GamerPoint + 1000;
                 }
                 else
                 {
-                    Console.WriteLine("Противник побеждает.");
+                    MessageBox.Show("Противник побеждает.");
                     GamerPoint = 0;
                     OpponentsDefeated = 0;
-                   
+                    LocatorView.CurrentView.UserControl.Content = new Defeat();
                 }
             }
             else if ((playerScore == 21 && opponentScore != 21) || (playerScore < 21 && opponentScore > 21) || (playerScore > opponentScore && playerScore <= 21))
             {
-                Console.WriteLine("Вы побеждаете!");
+                MessageBox.Show("Вы побеждаете!");
                 RestartGame();
                 OpponentsDefeated++;
                 GamerPoint = GamerPoint + 1000;
             }
             else if (playerScore == opponentScore)
             {
-                Console.WriteLine("Ничья. Игра перезапускается.");
+                MessageBox.Show("Ничья. Игра перезапускается.");
                 RestartGame();
                 GamerPoint = GamerPoint + 100;
             }
             else
             {
-                Console.WriteLine("Противник побеждает.");
+                MessageBox.Show("Противник побеждает.");
                 
                 GamerPoint = 0;
                 OpponentsDefeated = 0;
-               
-
-
-            }
+                LocatorView.CurrentView.UserControl.Content = new Defeat();
+                }
         }
 
         public void RestartGame()
         {
-            Console.WriteLine($"Вы победили {OpponentsDefeated} противников.");
+            MessageBox.Show($"Вы победили {OpponentsDefeated} противников.");
             Console.WriteLine("Начинаем новую игру!");
             playerScore = 0;
             opponentScore = 0;
@@ -166,7 +165,7 @@ namespace IgornoePrilozhenie
             }
             else
             {
-                Console.WriteLine("Карты закончились!");
+                MessageBox.Show("Карты закончились!");
                 return 0;
             }
         }

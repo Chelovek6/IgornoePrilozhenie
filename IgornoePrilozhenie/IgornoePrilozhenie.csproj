@@ -114,6 +114,9 @@
     <Compile Include="Continiu.xaml.cs">
       <DependentUpon>Continiu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataContext\CurrentView.cs" />
+    <Compile Include="DataContext\LocatorView.cs" />
+    <Compile Include="Model\PropertyC.cs" />
     <Compile Include="View\Defeat.xaml.cs">
       <DependentUpon>Defeat.xaml</DependentUpon>
     </Compile>
@@ -168,9 +171,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Imeges\skull.png" />
   </ItemGroup>

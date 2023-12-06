@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using IgornoePrilozhenie.DataContext;
 
 namespace IgornoePrilozhenie
 {
@@ -14,7 +15,7 @@ namespace IgornoePrilozhenie
     {
         public interface IGameViewModel
         {
-            UserControl CurrentControl { get; set; }
+            
         }
 
         private UserControl _selectedControl;
@@ -27,43 +28,32 @@ namespace IgornoePrilozhenie
         public ICommand ShowUserContro6Command => new RelayCommand(ShowUserControl6);
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public UserControl SelectedControl
-        {
-            get { return _selectedControl; }
-            set
-            {
-                if (_selectedControl != value)
-                {
-                    _selectedControl = value;
-                    OnPropertyChanged(nameof(SelectedControl));
-                }
-            }
-        }
+        
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void ShowUserControl1()
         {
-            SelectedControl = new Results();
+            LocatorView.CurrentView.UserControl.Content = new Results();
         }
 
         private void ShowUserControl2()
         {
-            SelectedControl = new ChoseRejim();
+            LocatorView.CurrentView.UserControl.Content = new ChoseRejim();
         }
         private void ShowUserControl3()
         {
-            SelectedControl = new UserControl1();
+            LocatorView.CurrentView.UserControl.Content = new UserControl1();
         }
         private void ShowUserControl4()
         {
-            SelectedControl = new BlackJack();
+            LocatorView.CurrentView.UserControl.Content = new BlackJack();
         }
         private void ShowUserControl5()
         {
-            SelectedControl = new RussianRullet();
+            LocatorView.CurrentView.UserControl.Content = new RussianRullet();
         }
         private void ShowUserControl6()
         {
-            SelectedControl = new Defeat();
+            LocatorView.CurrentView.UserControl.Content = new Defeat();
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public event PropertyChangedEventHandler PropertyChanged;

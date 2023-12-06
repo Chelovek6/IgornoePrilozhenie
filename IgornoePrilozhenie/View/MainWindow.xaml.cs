@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IgornoePrilozhenie.DataContext;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,12 +27,7 @@ namespace IgornoePrilozhenie
             InitializeComponent();
             ViewModel = new MainViewModel();
             DataContext = ViewModel;
-
-
-            // Установите начальный UserControl, если необходимо
-            ViewModel.SelectedControl = new UserControl1();
+            ContentView.Content = LocatorView.CurrentView.UserControl;
         }
-        
-
-    }
+     }
 }
