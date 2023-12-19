@@ -9,13 +9,12 @@
     <Grid>
         <!-- Table (Brown Rectangle) -->
         <Rectangle Fill="#733a05" Margin="10,200,10,60"/>
-        <ContentControl Content="{Binding CurrentControl}" />
-        <ContentControl Content="{Binding CurrentControl}" />
-        <!-- Exit Button (Top Left) -->
-        <Button Content="Выход" Foreground="White" Background="#4f4b47" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Command="{Binding ShowUserControl3Command}"/>
         
-        <Button Content="Продолжить"  FontSize="18"   Padding="10"  Width="150" Command="{Binding ShowUserControl6Command}" Height="60" Margin="534,111,116,279"/>
-        <Image Source="/IgornoePrilozhenie;component/Imeges/Man.png" Margin="217,-35,225,215"/>
+        <!-- Exit Button (Top Left) -->
+        <Button Content="Выход" Foreground="White" Background="#4f4b47" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Click="BackButtonClick"/>
+        
+       
+        <Image Source="/IgornoePrilozhenie;component/Imeges/Man.png" Margin="221,-10,221,190"/>
         <!-- Score Section (Top Right)-->
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
 

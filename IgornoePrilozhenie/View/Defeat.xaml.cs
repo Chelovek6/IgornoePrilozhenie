@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace IgornoePrilozhenie
 {
     /// <summary>
@@ -20,9 +21,37 @@ namespace IgornoePrilozhenie
     /// </summary>
     public partial class Defeat : UserControl
     {
+        private BlackJackLogic _blackJackLogic;
+        public BlackJackLogic BlackJackLogicInstance
+        {
+
+            get { return _blackJackLogic; }
+            set
+            {
+                if (_blackJackLogic != value)
+                {
+                    _blackJackLogic = value;
+                   // OnPropertyChanged(nameof(BlackJackLogicInstance));
+                }
+            }
+        }
+        private void UpdateUI()
+        {
+            
+            // lblOpponentScore.Content = $"Очки противника: {(blackJackLogic.DeveloperMode ? blackJackLogic.OpponentScore.ToString() : "скрыто")}";
+            txtOpponentsDefeated.Text = $"{BlackJackLogic.OpponentsDefeated}";
+            txtGamerPlus.Text = $"{BlackJackLogic.GamerPoint}";
+        }
+        private void BtnStand_Click(object sender, RoutedEventArgs e)
+        {
+            BlackJackLogic.GamerPoint = 0;
+            BlackJackLogic.OpponentsDefeated = 0;   
+        }
         public Defeat()
         {
             InitializeComponent();
+
+            UpdateUI();
         }
     }
 }

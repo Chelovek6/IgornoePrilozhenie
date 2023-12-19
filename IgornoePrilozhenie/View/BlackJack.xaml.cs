@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IgornoePrilozhenie.DataContext;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace IgornoePrilozhenie
     /// <summary>
     /// Логика взаимодействия для BlackJack.xaml
     /// </summary>
-    public partial class BlackJack : UserControl
+    public partial class BlackJack : UserControl 
     {
         private BlackJackLogic blackJackLogic;
         public BlackJack()
@@ -34,7 +35,10 @@ namespace IgornoePrilozhenie
             blackJackLogic.PlayerDrawCard();
             UpdateUI();
         }
-        
+        private void BackButtonClick(object sender, RoutedEventArgs e)
+        {
+            LocatorView.CurrentView.UserControl.Content = new UserControl1();
+        }
 
         private void BtnStand_Click(object sender, RoutedEventArgs e)
         {
@@ -42,12 +46,7 @@ namespace IgornoePrilozhenie
             blackJackLogic.DeclareWinner();
             UpdateUI();
         }
-        private void OnOpponentWins(object sender, EventArgs e)
-        {
-            // Логика для случая победы противника
-            Defeat userControl4 = new Defeat();
-            // ... (отобразите userControl4 в вашем UI)
-        }
+        
         
         private void UpdateUI()
         {

@@ -6,7 +6,44 @@
              xmlns:local="clr-namespace:IgornoePrilozhenie"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <UserControl.Resources>
+        <!-- Может потребоваться указать раздел x:Key для ресурса -->
+       <!-- <local:BlackJackLogic x:Key="BlackJackLogicInstance"/> -->
+    </UserControl.Resources>
+    <Grid Background="#FF403939">
+
+        <!-- Красная надпись "Вы проиграли" -->
+        <TextBlock Text="Вы проиграли" Foreground="Red" FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+
+        <!-- Новый StackPanel для объединения "Счёт:" и элементов из BlackJackLogic -->
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,70,0,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Счёт:" Foreground="White" FontSize="24" Margin="0,0,10,0"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Name="txtGamerPlus"  FontSize="24" Foreground="White"/>
+                    <TextBlock Name="txtOpponentsDefeated"  FontSize="24" Foreground="White" Margin="10,0,0,0"/>
+                    <Image Source="/IgornoePrilozhenie;component/Imeges/skull.png" Width="30" Height="30" Margin="5,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Поле для ввода имени и кнопка "Сохранить результат" -->
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,120,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <!-- Auto размер для TextBox -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- Auto размер для кнопки -->
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="Ваше имя:" Foreground="White" FontSize="20"/>
+                <TextBox x:Name="NameTextBox" Width="150" FontSize="20" Margin="5,0,0,0"/>
+            </StackPanel>
+
+            <Button Grid.Column="1" Content="Сохранить результат" FontSize="20" Margin="10,0,0,0"/>
+        </Grid>
+
+        <Button Content="Гл. Меню" Click="BtnStand_Click" Command="{Binding ShowUserControl3Command}" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,20"/>
     </Grid>
 </UserControl>

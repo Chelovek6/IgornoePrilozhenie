@@ -13,6 +13,7 @@ namespace IgornoePrilozhenie
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        
         public interface IGameViewModel
         {
             
@@ -25,7 +26,7 @@ namespace IgornoePrilozhenie
         public ICommand ShowUserControl3Command => new RelayCommand(ShowUserControl3);
         public ICommand ShowUserControl4Command => new RelayCommand(ShowUserControl4);
         public ICommand ShowUserControl5Command => new RelayCommand(ShowUserControl5);
-        public ICommand ShowUserContro6Command => new RelayCommand(ShowUserControl6);
+        
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -51,10 +52,7 @@ namespace IgornoePrilozhenie
         {
             LocatorView.CurrentView.UserControl.Content = new RussianRullet();
         }
-        private void ShowUserControl6()
-        {
-            LocatorView.CurrentView.UserControl.Content = new Defeat();
-        }
+        
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -70,10 +70,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Continiu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Defeat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,10 +79,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\BlackJack.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ChoseGameMode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,10 +102,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BlackJackLogic.cs" />
-    <Compile Include="Continiu.xaml.cs">
-      <DependentUpon>Continiu.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="GameResult.cs" />
+    <Compile Include="RussianRulletLogic.cs" />
+    <Compile Include="ViewModel\BlackJackLogic.cs" />
     <Compile Include="DataContext\CurrentView.cs" />
     <Compile Include="DataContext\LocatorView.cs" />
     <Compile Include="Model\PropertyC.cs" />
@@ -125,9 +116,6 @@
     </Compile>
     <Compile Include="View\BlackJack.xaml.cs">
       <DependentUpon>BlackJack.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ChoseGameMode.xaml.cs">
-      <DependentUpon>ChoseGameMode.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ChoseRejim.xaml.cs">
       <DependentUpon>ChoseRejim.xaml</DependentUpon>
@@ -171,7 +159,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="ResultsData\GamersResults.txt" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Imeges\skull.png" />
   </ItemGroup>
