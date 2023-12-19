@@ -42,7 +42,7 @@ namespace IgornoePrilozhenie
         
         public class ViewModel
         {
-            public string GameInfo => $"Очки игрока: {logic.GamersPoint}, Побед соперника: {logic.OpponentDefeated}";
+            //public string GameInfo => $"Очки игрока: {logic.GamersPoint}, Побед соперника: {logic.OpponentDefeated}";
 
             private RussianRouletteLogic logic;
 
@@ -54,8 +54,8 @@ namespace IgornoePrilozhenie
         private void UpdateUI()
         {
             TxtchamberCount.Text = $"1/{gameLogic.СhamberCount}";
-            TxtOpponentDefeated.Text = $"{gameLogic.OpponentDefeated}";
-            TxtGamersPoint.Text = $"{gameLogic.GamersPoint}";
+            TxtOpponentDefeated.Text = $"{RussianRouletteLogic.OpponentDefeated}";
+            TxtGamersPoint.Text = $"{RussianRouletteLogic.GamersPoint}";
         }
     }
 }

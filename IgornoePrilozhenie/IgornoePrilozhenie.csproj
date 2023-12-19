@@ -103,7 +103,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GameResult.cs" />
-    <Compile Include="RussianRulletLogic.cs" />
+    <Compile Include="ViewModel\RussianRulletLogic.cs" />
     <Compile Include="ViewModel\BlackJackLogic.cs" />
     <Compile Include="DataContext\CurrentView.cs" />
     <Compile Include="DataContext\LocatorView.cs" />
@@ -167,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imeges\Man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imeges\Gun.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

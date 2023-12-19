@@ -15,7 +15,14 @@
                 <Grid>
 
                     <!-- Добавляем DataGrid для первой таблицы -->
-                    <DataGrid x:Name="dataGrid1" AutoGenerateColumns="True" Margin="75,0,0,0" Grid.ColumnSpan="2"/>
+                    <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False" Margin="75,0,0,0" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Имя игрока" Binding="{Binding PlayerName}" />
+                            <DataGridTextColumn Header="Сыграно игр" Binding="{Binding GamesPlayed}" />
+                            <DataGridTextColumn Header="Очки" Binding="{Binding Score}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
                 </Grid>
             </TabItem>
 

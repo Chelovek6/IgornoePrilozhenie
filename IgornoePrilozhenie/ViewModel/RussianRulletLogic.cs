@@ -15,8 +15,8 @@ namespace IgornoePrilozhenie
         private Random random;
         private bool isPlayerTurn; // Переменная, определяющая, чей ход
 
-        public int GamersPoint { get; private set; }
-        public int OpponentDefeated { get; private set; }
+        public static int GamersPoint { get;  set; }
+        public static int OpponentDefeated { get;  set; }
         private bool isFirstTurn = true;
         public int СhamberCount { get { return chamberCount; } }
 
@@ -49,6 +49,7 @@ namespace IgornoePrilozhenie
             // Ход игрока
             if (isPlayerTurn)
             {
+                MessageBox.Show("Ваш ход");
                 if (random.NextDouble() < currentChance)
                 {
                     ShowDefeatScreen();

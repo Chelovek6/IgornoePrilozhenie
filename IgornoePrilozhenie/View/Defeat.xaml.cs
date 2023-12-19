@@ -35,17 +35,37 @@ namespace IgornoePrilozhenie
                 }
             }
         }
+
+        private RussianRouletteLogic _russianRouletteLogic;
+        public RussianRouletteLogic RussianRouletteLogicInstance
+        {
+
+            get { return _russianRouletteLogic; }
+            set
+            {
+                if (_russianRouletteLogic != value)
+                {
+                    _russianRouletteLogic = value;
+                    // OnPropertyChanged(nameof(BlackJackLogicInstance));
+                }
+            }
+        }
+
         private void UpdateUI()
         {
             
             // lblOpponentScore.Content = $"Очки противника: {(blackJackLogic.DeveloperMode ? blackJackLogic.OpponentScore.ToString() : "скрыто")}";
             txtOpponentsDefeated.Text = $"{BlackJackLogic.OpponentsDefeated}";
             txtGamerPlus.Text = $"{BlackJackLogic.GamerPoint}";
+            txtOpponentsDefeated.Text = $"{RussianRouletteLogic.OpponentDefeated}";
+            txtGamerPlus.Text = $"{RussianRouletteLogic.GamersPoint}";
         }
         private void BtnStand_Click(object sender, RoutedEventArgs e)
         {
             BlackJackLogic.GamerPoint = 0;
-            BlackJackLogic.OpponentsDefeated = 0;   
+            BlackJackLogic.OpponentsDefeated = 0;
+            RussianRouletteLogic.OpponentDefeated = 0;
+            RussianRouletteLogic.GamersPoint = 0;
         }
         public Defeat()
         {

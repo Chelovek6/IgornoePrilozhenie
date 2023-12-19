@@ -12,4 +12,5 @@ namespace IgornoePrilozhenie
         public int OpponentsDefeated { get; set; }
         public int GamerPoint { get; set; }
     }
+
 }
