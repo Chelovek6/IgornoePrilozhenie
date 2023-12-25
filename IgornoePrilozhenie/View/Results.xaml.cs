@@ -25,40 +25,40 @@ namespace IgornoePrilozhenie
         public Results()
         {
             InitializeComponent();
-            ReadAllLinesFromFile();
+            //ReadAllLinesFromFile();
         }
 
-        private void ReadAllLinesFromFile()
-        {
-            try
-            {
-                string filePath = "ResultsData/GamersResult.txt";
-                string[] lines = File.ReadAllLines(filePath);
+        //private void ReadAllLinesFromFile()
+        //{
+        //    try
+        //    {
+        //        string filePath = "ResultsData/GamersResult.txt";
+        //        string[] lines = File.ReadAllLines(filePath);
 
-                List<GameResult> results = new List<GameResult>();
+        //        List<GameResult> results = new List<GameResult>();
 
-                foreach (string line in lines)
-                {
-                    string[] values = line.Split('\t'); // предполагается, что данные разделены табуляцией
-                    if (values.Length == 3)
-                    {
-                        results.Add(new GameResult
-                        {
-                            PlayerName = values[0],
-                            OpponentsDefeated = int.Parse(values[1]),
-                            GamerPoint = int.Parse(values[2])
-                        });
-                    }
-                }
+        //        foreach (string line in lines)
+        //        {
+        //            string[] values = line.Split('\t'); // предполагается, что данные разделены табуляцией
+        //            if (values.Length == 3)
+        //            {
+        //                results.Add(new GameResult
+        //                {
+        //                    PlayerName = values[0],
+        //                    OpponentsDefeated = int.Parse(values[1]),
+        //                    GamerPoint = int.Parse(values[2])
+        //                });
+        //            }
+        //        }
 
-                dataGrid1.ItemsSource = results; // привязываем коллекцию к DataGrid
-            }
-            catch (Exception ex)
-            {
-                // Обработка исключений при чтении файла.
-                Console.WriteLine($"Ошибка при чтении файла: {ex.Message}");
-            }
-        }
+        //        dataGrid1.ItemsSource = results; // привязываем коллекцию к DataGrid
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Обработка исключений при чтении файла.
+        //        Console.WriteLine($"Ошибка при чтении файла: {ex.Message}");
+        //    }
+        //}
 
 
     }
