@@ -98,6 +98,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\RulletDefeat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Defeat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,7 +134,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GameResult.cs" />
+    <Compile Include="View\RulletDefeat.xaml.cs">
+      <DependentUpon>RulletDefeat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\RussianRulletLogic.cs" />
     <Compile Include="ViewModel\BlackJackLogic.cs" />
     <Compile Include="DataContext\CurrentView.cs" />
@@ -188,16 +194,29 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ResultsData\user.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Imeges\skull.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imeges\Man.png" />
+    <Resource Include="Imeges\ManCards.png" />
+    <Resource Include="Imeges\ManDefeat.png" />
+    <Resource Include="Imeges\ManToy.png" />
+    <Resource Include="Imeges\Toy.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Imeges\Gun.png" />
+    <Resource Include="Imeges\Cards\EightCard.png" />
+    <Resource Include="Imeges\Cards\ElevenCard.png" />
+    <Resource Include="Imeges\Cards\FiveCard.png" />
+    <Resource Include="Imeges\Cards\FourCard.png" />
+    <Resource Include="Imeges\Cards\NineCard.png" />
+    <Resource Include="Imeges\Cards\OneCard.png" />
+    <Resource Include="Imeges\Cards\SevenCard.png" />
+    <Resource Include="Imeges\Cards\SixCard.png" />
+    <Resource Include="Imeges\Cards\TenCard.png" />
+    <Resource Include="Imeges\Cards\ThreeCard.png" />
+    <Resource Include="Imeges\Cards\TwoCard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions />
 </Project>

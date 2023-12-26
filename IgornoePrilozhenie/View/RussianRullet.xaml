@@ -6,15 +6,39 @@
              xmlns:local="clr-namespace:IgornoePrilozhenie"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="#dbdbdb">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#007df2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <!-- Table (Brown Rectangle) -->
-        <Rectangle Fill="#733a05" Margin="10,200,10,60"/>
+        <Rectangle Fill="#733a05" Margin="10,205,10,60"/>
 
         <!-- Exit Button   (Top Left) -->
         <Button Content="Выход" Foreground="White" Background="#4f4b47" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Click="BackButtonClick"/>
-        <Image Source="/IgornoePrilozhenie;component/Imeges/Man.png" Margin="221,-10,221,190"/>
+        <Image x:Name="imgManToy" Source="/IgornoePrilozhenie;component/Imeges/ManToy.png" Margin="234,0,234,206" Visibility="Collapsed"/>
+        <Image x:Name="imgManDefeat" Source="/IgornoePrilozhenie;component/Imeges/ManDefeat.png" Margin="234,0,234,206" Visibility="Collapsed"/>
+        <Image x:Name="imgMan" Source="/IgornoePrilozhenie;component/Imeges/Man.png" Margin="234,0,234,206"/>
         <!-- Score Section (Top Right) -->
-        <Image Source="/IgornoePrilozhenie;component/Imeges/Gun.png" Margin="300,219,300,79"/>
+        <Image x:Name="imgRevolver" Source="/IgornoePrilozhenie;component/Imeges/Toy.png" Margin="300,219,300,79" Visibility="Collapsed"/>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
 
             <!-- Score Section (Opponents and Main) -->

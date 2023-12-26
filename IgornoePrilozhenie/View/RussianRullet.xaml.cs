@@ -53,6 +53,22 @@ namespace IgornoePrilozhenie
         }
         private void UpdateUI()
         {
+            // Обновление изображения револьвера
+            if (gameLogic.IsPlayerTurn)
+            {
+                imgRevolver.Visibility = Visibility.Visible; // Скрываем револьвер во время хода игрока
+                imgMan.Visibility = Visibility.Visible; // Показываем изображение противника
+                imgManToy.Visibility = Visibility.Collapsed; // Скрываем изображение ManToy
+            }
+            else 
+            {
+                imgMan.Visibility = Visibility.Collapsed; // Скрываем изображение противника во время хода противника
+                imgRevolver.Visibility = Visibility.Collapsed; // Показываем револьвер
+                imgManToy.Visibility = Visibility.Visible; // Показываем изображение ManToy
+            }
+            
+
+            // Остальной код обновления интерфейса
             TxtchamberCount.Text = $"1/{gameLogic.СhamberCount}";
             TxtOpponentDefeated.Text = $"{RussianRouletteLogic.OpponentDefeated}";
             TxtGamersPoint.Text = $"{RussianRouletteLogic.GamersPoint}";

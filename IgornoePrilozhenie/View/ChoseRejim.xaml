@@ -6,6 +6,29 @@
              xmlns:local="clr-namespace:IgornoePrilozhenie"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="#FF403939">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#007df2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -13,10 +36,10 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Content="BlackJack" Width="200" Height="60" Margin="0,0,20,0" Command="{Binding ShowUserControl4Command}"/>
-            <Button Content="Русская Рулетка" Width="200" Height="60" Command="{Binding ShowUserControl5Command}"/>
+            <Button Content="BlackJack" Width="200" Height="60"  Style="{StaticResource  {x:Type Button}}" Margin="0,0,20,0" Command="{Binding ShowUserControl4Command}"/>
+            <Button Content="Русская Рулетка" Width="200" Height="60"  Style="{StaticResource {x:Type Button}}" Command="{Binding ShowUserControl5Command}"/>
         </StackPanel>
 
-        <Button Content="Назад" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Command="{Binding ShowUserControl3Command}"/>
+        <Button Content="Назад" Style="{StaticResource {x:Type Button}}" HorizontalAlignment="Left"  Width="100" Height="30"  VerticalAlignment="Bottom" Margin="10" Command="{Binding ShowUserControl3Command}"/>
     </Grid>
 </UserControl>

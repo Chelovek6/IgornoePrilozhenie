@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
+
 namespace IgornoePrilozhenie
 {
     public class BlackJackLogic 
@@ -24,7 +25,9 @@ namespace IgornoePrilozhenie
         public bool defeat = false;
         public static int GamerPoint = 0;
         public static int OpponentsDefeated = 0;
+        private int currentCardIndex;
 
+       
         public BlackJackLogic()
         {
             deck = GenerateDeck();
@@ -33,7 +36,7 @@ namespace IgornoePrilozhenie
             opponentScore = 0;
             developerMode = true;
         }
-
+        
         public int PlayerScore => playerScore;
         public int OpponentScore => opponentScore;
         public bool DeveloperMode => developerMode;
@@ -62,7 +65,7 @@ namespace IgornoePrilozhenie
                 int cardValue = DrawCard();
                 if (cardValue == 0)
                 {
-                    MessageBox.Show("Карты закончились!");
+                    //MessageBox.Show("Карты закончились!");
                     break;
                 }
                 opponentScore += cardValue;
@@ -114,7 +117,8 @@ namespace IgornoePrilozhenie
                 
                 
                 LocatorView.CurrentView.UserControl.Content = new Defeat();
-                }
+            }
+           
         }
 
         public void RestartGame()
@@ -163,7 +167,7 @@ namespace IgornoePrilozhenie
             }
             else
             {
-                MessageBox.Show("Карты закончились!");
+                //MessageBox.Show("Карты закончились!");
                 return 0;
             }
         }

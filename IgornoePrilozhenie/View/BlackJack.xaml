@@ -6,16 +6,50 @@
              xmlns:local="clr-namespace:IgornoePrilozhenie"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="#dbdbdb">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#007df2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <!-- Table (Brown Rectangle) -->
         <Rectangle Fill="#733a05" Margin="10,200,10,60"/>
         
         <!-- Exit Button (Top Left) -->
         <Button Content="Выход" Foreground="White" Background="#4f4b47" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Click="BackButtonClick"/>
-        
-       
-        <Image Source="/IgornoePrilozhenie;component/Imeges/Man.png" Margin="221,-10,221,190"/>
+
+
+        <Image x:Name="imgPlayer" Source="/IgornoePrilozhenie;component/Imeges/Man.png" Margin="234,0,234,206"/>
         <!-- Score Section (Top Right)-->
+
+        <Image x:Name="imgCard1"  Source="/IgornoePrilozhenie;component/Imeges/Cards/OneCard.png" Visibility="Collapsed"  Margin="341,295,341,82"/>
+        <Image x:Name="imgCard2"  Source="/IgornoePrilozhenie;component/Imeges/Cards/TwoCard.png" Visibility="Collapsed" Margin="325,286,325,80"/>
+        <Image x:Name="imgCard3"  Source="/IgornoePrilozhenie;component/Imeges/Cards/ThreeCard.png" Visibility="Collapsed" Margin="290,288,306,65"/>
+        <Image x:Name="imgCard4"  Source="/IgornoePrilozhenie;component/Imeges/Cards/FourCard.png" Visibility="Collapsed" Margin="305,291,292,71"/>
+        <Image x:Name="imgCard5"  Source="/IgornoePrilozhenie;component/Imeges/Cards/FiveCard.png" Visibility="Collapsed" Margin="315,302,305,61"/>
+        <Image x:Name="imgCard6"  Source="/IgornoePrilozhenie;component/Imeges/Cards/SixCard.png" Visibility="Collapsed" Margin="296,294,296,54"/>
+        <Image x:Name="imgCard7"  Source="/IgornoePrilozhenie;component/Imeges/Cards/SevenCard.png" Visibility="Collapsed" Margin="278,286,290,48"/>
+        <Image x:Name="imgCard8"  Source="/IgornoePrilozhenie;component/Imeges/Cards/EightCard.png" Visibility="Collapsed" Margin="267,280,267,43"/>
+        <Image x:Name="imgCard9"  Source="/IgornoePrilozhenie;component/Imeges/Cards/NineCard.png" Visibility="Collapsed" Margin="251,273,251,36"/>
+        <Image x:Name="imgCard10"  Source="/IgornoePrilozhenie;component/Imeges/Cards/TenCard.png" Visibility="Collapsed" Margin="228,258,228,23"/>
+        <Image x:Name="imgCard11"  Source="/IgornoePrilozhenie;component/Imeges/Cards/ElevenCard.png" Visibility="Collapsed" Margin="202,240,202,6"/>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
 
             <!-- Score Section (Opponents and Main) -->
@@ -45,7 +79,7 @@
         <!-- Action Buttons Section (Bottom Left) -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
             <Button Content="Взять" Background="Green" Foreground="White" Width="160" Height="40" Margin="5" Click="BtnDrawCard_Click"/>
-            <Button Content="Пасс" Background="Red" Foreground="White" Width="160" Height="40" Margin="5" Click="BtnStand_Click"/>
+            <Button Content="Пасс" Background="Red" Foreground="White" Width="160" Height="40" Margin="5"  Click="BtnStand_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>

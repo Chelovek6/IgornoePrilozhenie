@@ -14,11 +14,12 @@ namespace IgornoePrilozhenie
         private double currentChance;
         private Random random;
         private bool isPlayerTurn; // Переменная, определяющая, чей ход
-
+        public bool IsPlayerTurn { get { return isPlayerTurn; } }
         public static int GamersPoint { get;  set; }
         public static int OpponentDefeated { get;  set; }
         private bool isFirstTurn = true;
         public int СhamberCount { get { return chamberCount; } }
+        public bool EnemyLost = false;
 
         public RussianRouletteLogic()
         {
@@ -30,6 +31,7 @@ namespace IgornoePrilozhenie
 
         public void StartGame()
         {
+            EnemyLost = false;
             chamberCount = 6;
             currentChance = 1.0 / chamberCount;
             isPlayerTurn = random.Next(2) == 0;
@@ -49,7 +51,7 @@ namespace IgornoePrilozhenie
             // Ход игрока
             if (isPlayerTurn)
             {
-                MessageBox.Show("Ваш ход");
+               // MessageBox.Show("Ваш ход");
                 if (random.NextDouble() < currentChance)
                 {
                     ShowDefeatScreen();
@@ -62,6 +64,7 @@ namespace IgornoePrilozhenie
                 {
                     GamersPoint += CalculatePoints(1.0 / chamberCount);
                     OpponentDefeated++;
+                    EnemyLost = true;
                     StartGame();
                     return;
                 }
@@ -70,7 +73,7 @@ namespace IgornoePrilozhenie
             // Ход противника
             else
             {
-               MessageBox.Show("Соперник ходит");
+              // MessageBox.Show("Соперник ходит");
                 if (random.NextDouble() < currentChance)
                 {
                     GamersPoint += CalculatePoints(1.0 / chamberCount);
@@ -103,7 +106,7 @@ namespace IgornoePrilozhenie
 
         private void ShowDefeatScreen()
         {
-            LocatorView.CurrentView.UserControl.Content = new Defeat();
+            LocatorView.CurrentView.UserControl.Content = new RulletDefeat();
         }
     }
 

@@ -6,13 +6,40 @@
              xmlns:local="clr-namespace:IgornoePrilozhenie"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="#FF403939">
+
+    <UserControl.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Margin" Value="0,0,0,40"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#007df2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
+
     <Grid>
-        <TextBlock Text="Игорное Приложение" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="55"/>
+        <TextBlock Text="Игорное Приложение" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="55" Foreground="#007df2"/>
 
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,70,0,0">
-            <Button Content="Играть" Tag="GoModeChoose" Width="150" Height="40" Margin="0,0,0,40" Command="{Binding ShowUserControl2Command}"/>
-            <Button Content="Результаты" Tag="GoToResultTable" Width="150" Height="40" Margin="0,0,0,40" Command="{Binding ShowUserControl1Command}"/>
-            <Button Content="Выход" Tag="Exit" Width="150" Height="40" Click="ExitButton_Click" />
+            <Button Style="{StaticResource MyButtonStyle}" Content="Играть" Tag="GoModeChoose" Command="{Binding ShowUserControl2Command}"/>
+            <Button Style="{StaticResource MyButtonStyle}" Content="Выход" Tag="Exit" Click="ExitButton_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>
