@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:IgornoePrilozhenie"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Icon="/IgornoePrilozhenie;component/Imeges/Cards/OneCard.png">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="9*"/>
