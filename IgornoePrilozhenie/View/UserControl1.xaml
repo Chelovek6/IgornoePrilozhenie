@@ -35,7 +35,7 @@
     
 
     <Grid>
-        <TextBlock Text="Игорное Приложение" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="55" Foreground="#007df2"/>
+        <TextBlock Text="Игорное Заведение" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="55" Foreground="#007df2"/>
 
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,70,0,0">
             <Button Style="{StaticResource MyButtonStyle}" Content="Играть" Tag="GoModeChoose" Command="{Binding ShowUserControl2Command}"/>
