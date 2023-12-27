@@ -61,6 +61,8 @@ namespace IgornoePrilozhenie
         }
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
+            BlackJackLogic.GamerPoint = 0;
+            BlackJackLogic.OpponentsDefeated = 0;
             LocatorView.CurrentView.UserControl.Content = new UserControl1();
         }
 

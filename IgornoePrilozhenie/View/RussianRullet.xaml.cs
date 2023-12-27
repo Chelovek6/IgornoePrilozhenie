@@ -37,6 +37,8 @@ namespace IgornoePrilozhenie
         }
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
+            RussianRouletteLogic.OpponentDefeated = 0;
+            RussianRouletteLogic.GamersPoint = 0;
             LocatorView.CurrentView.UserControl.Content = new UserControl1();
         }
         
